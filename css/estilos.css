@@ -7,17 +7,19 @@ body {
   margin: 0;
   background-image: radial-gradient(#78b9df, #a57bc7);
 }
-
-.img1 {
-  width: 350px;
-  border: 5px double blue;
-  margin-top: 20px;
+* a:visited{
+  color:var(--blanco);
 }
-.img2 {
-  margin: 30px 10px 10px auto;
-  width: 250px;
+.img1{
+  /*resto de imagenes*/
+  height:300px;
   border: 5px double blue;
 }
+.img2{
+  /*son las fotos de los gatos*/
+  height:150px;
+  border: 5px double blue;
+  }
 #container {
   display: grid;
   grid-template-columns: 30% 50% 20%;
@@ -42,7 +44,7 @@ body {
   font-size: 1.4em;
   grid-area: titulo;
   display: grid;
-  justify-content: center;
+  justify-content: center; 
 }
 .barra {
   grid-area: links;
@@ -106,25 +108,49 @@ body {
 .fotos {
   text-align: center;
   grid-area: fotos;
+  display:grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 40px 10% 10%;
+  grid-template-areas: 
+  "fotos-titulo"
+  "fotos-f1"
+  "fotos-f2";
+  
 }
+.fotos-titulo{
+  grid-area:fotos-titulo;
+  display:grid;
+  justify-content:start;
+  margin-left:40px;
+}
+.fotos-f1{
+  grid-area:fotos-f1;
+}
+.fotos-f1 figure{
+ display:grid;
+ justify-content: start;
+}
+.fotos-f2{
+  grid-area:fotos-f2;
+}
+.fotos-f2 figure{
+  display:grid;
+  justify-content: start;
+ }
 .rotaciones {
   display:grid;
   grid-area: caja;
-  grid-template-rows: 50px 50px 50px;
+  grid-template-rows: 150px 150px 150px;
   grid-template-areas: "pos1"
                        "pos2"
                        "pos3";
 }
 .pos1 {
   grid-area: pos1;
-  position: relative;
-  bottom: 100px;
-  animation-name: movimi;
 }
 .pos2 {
   grid-area: pos2;
-  position: relative;
-  top: 200px;
+  
 }
 .pos3 {
   grid-area: pos3;
@@ -173,6 +199,7 @@ body {
   display: grid;
   grid-template-columns: 60% 40%;
   grid-template-areas: "derechos  redes";
+  justify-content: center;
 }
 .derechos {
   grid-area: derechos;
@@ -195,10 +222,11 @@ body {
   border-right: 3px solid var(--sel-rojo);
   color: var(--sel-rojo);
 }
+/* medidas de 1200 ***********************************************************************/
 @media screen and (max-width: 1200px) {
   #container {
     grid-template-columns: 30% 70%;
-    grid-template-rows: 150px 20% 1fr 100px;
+    grid-template-rows: 150px 250px 1fr 80px;
     grid-template-areas:
       "header header "
       "aside    caja "
@@ -222,19 +250,19 @@ body {
   }
   .rotaciones {
     display:grid;
-    grid-template-rows:150px;;
-    grid-template-columns: 25% 25% 25%;
+    grid-template-columns:30% 30% 30%;
+    grid-template-rows:100px;
     grid-template-areas: "pos1 pos2 pos3";
-    align-items: center;
-    justify-content: center;
+    padding:30px;
+    margin-left:150px;
   }
   .pos1 {
     grid-area: pos1;
-    bottom:0;
+   
   }
   .pos2 {
     grid-area: pos2;
-    top: 0;
+    
   }
   .pos3 {
     grid-area: pos3;
@@ -249,11 +277,12 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
   }
+  
 }
-@media screen and (max-width: 900px){
+@media screen and (max-width: 980px){
   #container {
     grid-template-columns: 100%;
-    grid-template-rows: 150px 100px 100px 1fr 25% 150px;
+    grid-template-rows: 180px 120px 200px 1fr 350px 100px;
     grid-template-areas:
       "header"
       "aside"
@@ -285,14 +314,57 @@ body {
     
   }
   .img1{
-    width:100%;
+    height:200px;
   }
   .img2{
-    width: 100%;
+    height:150px;;
   }
-  .main{
-    bottom:0;
+  
+  .fotos {    
+    grid-area: fotos;
+    display:grid;
+    grid-template-columns:50% 50% ;
+    grid-template-rows: 30% 70%;
+    grid-template-areas: "fotos-titulo fotos-titulo""fotos-f1 fotos-f2";
+    position:relative;
+    bottom: 80px;
+    
+  }
+  .fotos-titulo{
+    justify-content: center;
+    font-size: 1.3em;
+  }
+  .footer {
+    grid-area: footer;
+    display: grid;
+    grid-template-rows: 50px 50px;
+    grid-template-columns: 100%;
+    grid-template-areas: "redes" "derechos";
+    justify-content: center;
+  
   }
   
 }
-
+@media screen and(max-width:600px){
+  #container {
+    grid-template-columns: 100%;
+    grid-template-rows: 210px 120px 200px 1fr 350px 100px;
+    grid-template-areas:
+      "header"
+      "aside"
+       "caja"
+      " main "
+      "fotos "
+      "footer";
+  }
+  .rotaciones {
+    display:grid;
+    grid-template-columns:30% 30% 30%;
+    grid-template-rows:100px;
+    grid-template-areas: "pos1 pos2 pos3";
+    justify-content: space-between;
+  }
+  .titulo{
+    font-size: 1em;
+  }
+}

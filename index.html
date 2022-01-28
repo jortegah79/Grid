@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pruebas de Grid</title>
     <link rel="StyleSheet" type="text/css" href="css/estilos.css" />
+
 </head>
 
 <body>
@@ -17,9 +18,9 @@
             </div>
             <div></div>
             <div class="barra">
-                <a id="inicio" href="#">inicio</a>
-                <a href="#rrss">redes</a>
-                <a href="#">sobre mi</a>
+                <a id="inicio" href="#">Saludo</a>
+                <a href="#rrss">Redes</a>
+                <a href="#">Sobre mi</a>
             </div>
 
         </div>
@@ -117,7 +118,7 @@
             <h3>OTROS ENLACES</h3>
             <a href="https://www.google.es" target="_blank">Google</a>
             <a href="https://developer.mozilla.org/es/" target="_blank">Mozila</a>
-            <a href="https://www.w3.org/" target="_blank">w3c</a>
+            <a href="https://www.w3.org/" target="_blank">W3c</a>
             <a href="https://ioc.xtec.cat/educacio/" target="_blank">IOC</a>
             <a href="https://web.gencat.cat/ca/inici" target="_blank">Gencat</a>
 
@@ -134,30 +135,39 @@
                 <figcaption>Gato sorprendido</figcaption>
             </figure>
         </div>
-        <div class=".caja">
-            <div style="background-color: red;"></div>
-            <div style="background-color: blue;animation-delay:0.3s;"></div>
-            <div style="background-color: green;animation-delay:0.5s;"></div>
-            <div style="background-color: yellow;animation-delay:0.7s;"></div>
+        <div class="rotaciones">
+            <div class="pos1">
+                <div class="caja" style="background-color: red;"></div>
+                <div class="caja" style="background-color: blue;animation-delay:0.3s;"></div>
+                <div class="caja" style="background-color: green;animation-delay:0.5s;"></div>
+                <div class="caja" style="background-color: yellow;animation-delay:0.7s;"></div>
+            </div>
+            <div class="pos2">
+                <div class="caja" style="background-color: red;"></div>
+                <div class="caja" style="background-color: blue;animation-delay:0.3s;"></div>
+                <div class="caja" style="background-color: green;animation-delay:0.5s;"></div>
+                <div class="caja" style="background-color: yellow;animation-delay:0.7s;"></div>
+            </div>
+            <div class="pos3">
+                <div class="caja" style="background-color: red;"></div>
+                <div class="caja" style="background-color: blue;animation-delay:0.3s;"></div>
+                <div class="caja" style="background-color: green;animation-delay:0.5s;"></div>
+                <div class="caja" style="background-color: yellow;animation-delay:0.7s;"></div>
+            </div>
         </div>
-        <div class="footer">            
+
+        <div class="footer">
             <div class="derechos">
                 <h4>Derechos reservados Juan Ortega</h4>
             </div>
-            <div id="rrss"class="redes">
+            <div id="rrss" class="redes">
                 <a href="https://github.com/">Github</a>
-                <a href="https://es.linkedin.com/">Linkedin</a>  
-                <a href="#inicio">AL inicio</a>              
+                <a href="https://es.linkedin.com/">Linkedin</a>
+                <a href="#inicio">AL inicio</a>
             </div>
         </div>
     </div>
-<script>
-    function saludo(){
-        alert("Hola que tal, soy un evento");
-    }
-    const inicio=document.getElementsByTagName("a");
-    inicio[2].addEventListener("click",saludo);
-</script>
+    <script type="text/javascript" src="js/script.js"></script>
 </body>
 
 </html

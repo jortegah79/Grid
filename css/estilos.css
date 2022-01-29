@@ -272,7 +272,7 @@ figcaption{
 @media screen and (max-width: 980px){
   #container {
     grid-template-columns: 100%;
-    grid-template-rows: 130px 120px 200px 1fr 900px 100px;
+    grid-template-rows: 180px 120px 200px 1fr 900px 100px;
     grid-template-areas:
       "header"
       "aside"

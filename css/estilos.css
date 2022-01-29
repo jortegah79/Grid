@@ -319,11 +319,12 @@ figcaption{
   .fotos{    
     grid-area: fotos;
     grid-template-columns: 80%;
-    grid-template-rows: 70px 1fr;
+    grid-template-rows: 1fr 1fr;
     
   }
   .fotos-titulo{
     justify-content: center;
+align-items:center;
     font-size: 1.2em;
   }
   .fotos-div-fotos{

@@ -2,33 +2,33 @@ body {
   margin: 0;
   background-image: radial-gradient(#78b9df, #a57bc7);
 }
-.blanco,.blanco a{
-  color:#fff;
+.blanco,
+.blanco a {
+  color: #fff;
   text-shadow: 2px 2px black;
   font-size: 1.2em;
 }
-.enlace a{
- 
+.enlace a {
   text-decoration: none;
   padding: 10px;
   text-align: center;
 }
-.enlace a:hover{
+.enlace a:hover {
   border-left: 3px solid #f00;
   border-right: 3px solid #f00;
   color: #f00;
 }
-.img1{
-  height:250px;
+.img1 {
+  height: 250px;
   border: 5px double blue;
-  margin-left:50px;
+  margin-left: 50px;
 }
-.img2{
-  height:150px;
+.img2 {
+  height: 150px;
   border: 5px double blue;
-  }
+}
 
-  /* /////////////////////////////////////////  hasta aqui las genericas  ///////////////////////////// */
+/* /////////////////////////////////////////  hasta aqui las genericas  ///////////////////////////// */
 #container {
   display: grid;
   grid-template-columns: 30% 50% 20%;
@@ -51,107 +51,107 @@ body {
 .titulo {
   grid-area: titulo;
   display: grid;
-  justify-content: center; 
+  justify-content: center;
 }
 .barra {
   grid-area: links;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
-.barra a { 
-  margin: 10px; 
+.barra a {
+  margin: 10px;
   border-bottom: 1px solid #00f;
- }
+}
 .aside {
-  margin-top:20px; 
+  margin-top: 20px;
   display: grid;
-  width:80%;  
+  width: 80%;
   height: 40%;
   grid-template-rows: 80px 150px;
   justify-content: center;
   align-items: center;
   grid-area: aside;
 }
-.aside-titulo{
-  text-align:center;
-  font-size: 1.2em;  
+.aside-titulo {
+  text-align: center;
+  font-size: 1.2em;
 }
 .aside-enlaces {
-  display:grid;
-  grid-template-rows: repeat(5,30px);  
-  text-align: center;   
+  display: grid;
+  grid-template-rows: repeat(5, 30px);
+  text-align: center;
   align-items: center;
 }
 .main {
-  
   grid-area: main;
   width: 95%;
   margin-top: 20px;
 }
-p{
+p {
   text-align: left;
 }
-figcaption{
+figcaption {
   text-align: center;
 }
 .imagenes {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;  
+  align-items: center;
 }
 .fotos {
-   text-align: center;
+  text-align: center;
   grid-area: fotos;
-  display:grid;
+  display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 100px 250px 250px;
-  grid-template-areas: 
-  "fotos-titulo"
-  "fotos-f1"
-  "fotos-f2";  
+  grid-template-areas:
+    "fotos-titulo"
+    "fotos-f1"
+    "fotos-f2";
 }
-.fotos-titulo{
-  grid-area:fotos-titulo;
-  display:grid;
-  justify-content:start;
-  margin-left:40px;
-}
-.fotos-f1{
-  grid-area:fotos-f1;
-}
-.fotos-f1 figure{
- display:grid;
- justify-content: start;
-}
-.fotos-f2{
-  grid-area:fotos-f2;
-}
-.fotos-f2 figure{
-  display:grid;
+.fotos-titulo {
+  grid-area: fotos-titulo;
+  display: grid;
   justify-content: start;
- }
+  margin-left: 40px;
+}
+.fotos-f1 {
+  grid-area: fotos-f1;
+}
+.fotos-f1 figure {
+  display: grid;
+  justify-content: start;
+}
+.fotos-f2 {
+  grid-area: fotos-f2;
+}
+.fotos-f2 figure {
+  display: grid;
+  justify-content: start;
+}
 .rotaciones {
-  display:grid;
+  display: grid;
   grid-area: caja;
   grid-template-rows: 150px 150px 150px;
-  grid-template-areas: "pos1"
-                       "pos2"
-                       "pos3";
+  grid-template-areas:
+    "pos1"
+    "pos2"
+    "pos3";
 }
 .pos1 {
   grid-area: pos1;
 }
 .pos2 {
-  grid-area: pos2;  
+  grid-area: pos2;
 }
 .pos3 {
   grid-area: pos3;
 }
 .caja {
   width: 50px;
-  height: 5px;  
-  margin:0 auto;;
+  height: 5px;
+  margin: 0 auto;
   transform: rotate(1deg);
   animation-name: rotacion;
   animation-duration: 1s;
@@ -215,122 +215,121 @@ figcaption{
       " .  main "
       "footer footer ";
   }
-  .fotos {   
+  .fotos {
     grid-area: fotos;
   }
-  .aside{
-    margin-left:30px;
+  .aside {
+    margin-left: 30px;
   }
-  .fotos h3{
-  margin-left:30px;
-    text-align:center;
+  .fotos h3 {
+    margin-left: 30px;
+    text-align: center;
   }
   .header {
     grid-template-columns: 100%;
     grid-template-rows: 50% 50%;
-    grid-template-areas: "titulo"
-                        " links";
+    grid-template-areas:
+      "titulo"
+      " links";
     align-items: center;
   }
   .rotaciones {
-    display:grid;
-    grid-template-columns:30% 30% 30%;
-    grid-template-rows:100px;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-template-rows: 100px;
     grid-template-areas: "pos1 pos2 pos3";
     justify-content: center;
     align-items: center;
   }
   .pos1 {
     grid-area: pos1;
-   
   }
   .pos2 {
     grid-area: pos2;
-    
   }
   .pos3 {
     grid-area: pos3;
   }
-  .main{
-    position:relative;
-    bottom:140px;
-    margin: 0 auto ;
+  .main {
+    position: relative;
+    bottom: 140px;
+    margin: 0 auto;
   }
   .imagenes {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
   }
-  .img1{
-    height:300px;
-  } 
-  .img2{
-    height:120px;    
+  .img1 {
+    height: 300px;
+  }
+  .img2 {
+    height: 120px;
   }
 }
 /**********************************************************         tamaño980    */
-@media screen and (max-width: 980px){
+@media screen and (max-width: 980px) {
   #container {
     grid-template-columns: 100%;
-    grid-template-rows: 130px 120px 200px 1fr 900px 100px;
+    grid-template-rows: 130px 120px 200px 1fr 700px 140px;
     grid-template-areas:
       "header"
       "aside"
-       "caja"
+      "caja"
       " main "
       "fotos "
       "footer";
   }
-  .aside {   
+  .aside {
     grid-area: aside;
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 100%;
-    grid-template-areas: "asideTitulo"
-                          "asideEnlaces";  
-    height: 100%;  
-    margin:0 auto;
+    grid-template-areas:
+      "asideTitulo"
+      "asideEnlaces";
+    height: 100%;
+    margin: 0 auto;
     justify-content: space-between;
   }
-  .aside-titulo{
-    grid-area:asideTitulo;
-    display:grid;
-  
+  .aside-titulo {
+    grid-area: asideTitulo;
+    display: grid;
   }
   .aside-enlaces {
     grid-area: asideEnlaces;
-    display:grid;
-    grid-template-columns: repeat(5,1fr);
-    margin-left:10px;
-    
-  }    
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin-left: 10px;
+  }
   .img1{
-    
-    height:auto;
-    width:80%;
-    border: 5px double blue;
+    height: auto;
+    width: 100%;   
+    margin:0 auto; 
   }
-  /*.img2{
-    width:40%;
-    height:auto;
-    border: 5px double blue;
-    }
-  
-  .fotos{    
+  .img2{    
+    height: auto;
+    width: 100%;   
+    margin:0 auto;
+  }
+
+  .fotos {
+    position: relative;
+    bottom: 120px;
     grid-area: fotos;
-    grid-template-columns: 80%;
-    grid-template-rows: 70px 1fr;
-    
   }
-  .fotos-titulo{
+  .fotos-titulo {
     justify-content: center;
     font-size: 1.2em;
   }
-  .fotos-div-fotos{
-    display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;    
-  }*/
+  .fotos-div-fotos {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
   .footer {
     grid-area: footer;
     display: grid;
@@ -338,34 +337,30 @@ figcaption{
     grid-template-columns: 100%;
     grid-template-areas: "redes" "derechos";
     justify-content: center;
-  
   }
-  
 }
-@media screen and(max-width:600px){
+@media screen and (max-width: 980px) {
   #container {
-    grid-template-columns: 95%;
-    grid-template-rows: 210px 120px 200px 1fr 350px 100px;
+    grid-template-columns: 100%;
+    grid-template-rows: 180px 120px 200px 1fr 600px 140px;
     grid-template-areas:
       "header"
       "aside"
-       "caja"
+      "caja"
       " main "
       "fotos "
       "footer";
   }
-  .rotaciones {
-    display:grid;
-    grid-template-columns:30% 30% 30%;
-    grid-template-rows:100px;
-    grid-template-areas: "pos1 pos2 pos3";
-    justify-content: space-between;
+  .blanco{
+    font-size: 0.9em;
   }
-  .titulo{
-    font-size: 1em;
+  .main{
+    width:90%;
   }
-.fotos-div-fotos{
-  display:flex;
-  flex-direction: column;
+  .img2 {
+    width: 400px;
+    height: auto;   
+  }
+
 }
-}
+

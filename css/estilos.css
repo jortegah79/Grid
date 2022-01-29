@@ -310,7 +310,7 @@ figcaption{
     width:80%;
     border: 5px double blue;
   }
-  /*.img2{
+  .img2{
     width:40%;
     height:auto;
     border: 5px double blue;
@@ -330,7 +330,7 @@ figcaption{
     display:flex;
     flex-direction: row;
     flex-wrap: wrap;    
-  }*/
+  }
   .footer {
     grid-area: footer;
     display: grid;

@@ -10,7 +10,7 @@ body {
 }
 .enlace a {
   text-decoration: none;
-  padding: 10px;
+  padding: 5px;
   text-align: center;
 }
 .enlace a:hover {
@@ -18,21 +18,16 @@ body {
   border-right: 3px solid #f00;
   color: #f00;
 }
-.img1 {
-  height: 250px;
-  border: 5px double blue;
-  margin-left: 50px;
-}
-.img2 {
-  height: 150px;
+.img {
+  margin: 10px auto;
+  width: 90%;
   border: 5px double blue;
 }
-
 /* /////////////////////////////////////////  hasta aqui las genericas  ///////////////////////////// */
 #container {
   display: grid;
   grid-template-columns: 30% 50% 20%;
-  grid-template-rows: 100px 250px 1fr 100px;
+  /* grid-template-rows: 100px 250px 1fr 100px;*/
   grid-template-areas:
     "header header header"
     "aside    main    .   "
@@ -43,15 +38,16 @@ body {
   background: #000;
   grid-area: header;
   display: grid;
-  justify-content: center;
-  grid-template-columns: 60% 40%;
+  justify-content: space-evenly;
   grid-template-areas: "titulo links";
   align-items: center;
+  box-shadow: -1px -1px 8px 1px blue;
 }
 .titulo {
   grid-area: titulo;
   display: grid;
   justify-content: center;
+  margin:0 10px;
 }
 .barra {
   grid-area: links;
@@ -63,48 +59,42 @@ body {
   border-bottom: 1px solid #00f;
 }
 .aside {
-  margin-top: 20px;
+  margin: 20px auto 0;
   display: grid;
-  width: 80%;
-  height: 40%;
-  grid-template-rows: 80px 150px;
-  justify-content: center;
-  align-items: center;
+  height: 30%;
   grid-area: aside;
+  grid-template-areas:
+    "asideTitulo"
+    "asideEnlaces";
+  align-items: flex-start;
 }
 .aside-titulo {
+  grid-area: asideTitulo;
   text-align: center;
   font-size: 1.2em;
 }
 .aside-enlaces {
+  grid-area: asideEnlaces;
   display: grid;
-  grid-template-rows: repeat(5, 30px);
-  text-align: center;
-  align-items: center;
 }
 .main {
   grid-area: main;
-  width: 95%;
+  width: 100%;
   margin-top: 20px;
+   text-align: center;
 }
-p {
-  text-align: left;
-}
-figcaption {
-  text-align: center;
-}
-.imagenes {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+.main p{
+  text-align:center;
 }
 .fotos {
   text-align: center;
   grid-area: fotos;
   display: grid;
+  margin: 0 auto;
+  height: 50%;
+  position: relative;
+  bottom: 30%;
   grid-template-columns: 100%;
-  grid-template-rows: 100px 250px 250px;
   grid-template-areas:
     "fotos-titulo"
     "fotos-f1"
@@ -112,28 +102,18 @@ figcaption {
 }
 .fotos-titulo {
   grid-area: fotos-titulo;
-  display: grid;
-  justify-content: start;
-  margin-left: 40px;
 }
 .fotos-f1 {
   grid-area: fotos-f1;
 }
-.fotos-f1 figure {
-  display: grid;
-  justify-content: start;
-}
 .fotos-f2 {
   grid-area: fotos-f2;
-}
-.fotos-f2 figure {
-  display: grid;
-  justify-content: start;
 }
 .rotaciones {
   display: grid;
   grid-area: caja;
-  grid-template-rows: 150px 150px 150px;
+  position: relative;
+  bottom: 70%;
   grid-template-areas:
     "pos1"
     "pos2"
@@ -190,57 +170,48 @@ figcaption {
 .footer {
   grid-area: footer;
   display: grid;
-  grid-template-columns: 60% 40%;
   grid-template-areas: "derechos  redes";
-  justify-content: center;
+  justify-content: space-evenly;
 }
 .derechos {
   grid-area: derechos;
-  margin-left: 30px;
 }
 .redes {
-  text-align: right;
   grid-area: redes;
-  text-align: center;
 }
-/* medidas de 1200 ***********************************************************************/
-@media screen and (max-width: 1200px) {
+/* medidas de 950 ***********************************************************************/
+@media screen and (max-width: 950px) {
   #container {
-    grid-template-columns: 30% 70%;
-    grid-template-rows: 150px 250px 1fr 80px;
-    grid-template-areas:
-      "header header "
-      "aside    caja "
-      "fotos  main "
-      " .  main "
-      "footer footer ";
-  }
-  .fotos {
-    grid-area: fotos;
-  }
-  .aside {
-    margin-left: 30px;
-  }
-  .fotos h3 {
-    margin-left: 30px;
-    text-align: center;
-  }
-  .header {
     grid-template-columns: 100%;
-    grid-template-rows: 50% 50%;
+    grid-template-areas:
+      "header "
+      "aside"
+      "caja "
+      "main "
+      "fotos"
+      "footer";
+  }
+  .header {  
     grid-template-areas:
       "titulo"
       " links";
-    align-items: center;
+    align-items: none;
+  } 
+  .aside-enlaces{
+    display:grid;    
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    margin-bottom: 40px;
   }
-  .rotaciones {
-    display: grid;
-    grid-template-columns: 30% 30% 30%;
-    grid-template-rows: 100px;
+   .rotaciones {
+    display: grid;    
     grid-template-areas: "pos1 pos2 pos3";
-    justify-content: center;
-    align-items: center;
-  }
+    position:normal;    
+    bottom:0;
+    }
+    .main{
+      width:90%;
+      margin:0 auto;;
+    }
   .pos1 {
     grid-area: pos1;
   }
@@ -249,130 +220,17 @@ figcaption {
   }
   .pos3 {
     grid-area: pos3;
-  }
-  .main {
-    position: relative;
-    bottom: 140px;
-    margin: 0 auto;
-  }
-  .imagenes {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-  }
-  .img1 {
-    height: 300px;
-  }
-  .img2 {
-    height: 120px;
-  }
-}
-/**********************************************************         tamaño980    */
-@media screen and (max-width: 980px) {
-  #container {
-    grid-template-columns: 100%;
-    grid-template-rows: 130px 120px 200px 1fr 1000px 180px;
-    grid-template-areas:
-      "header"
-      "aside"
-      "caja"
-      " main "
-      "fotos "
-      "footer";
-  }
-  .aside {
-    grid-area: aside;
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 100%;
-    grid-template-areas:
-      "asideTitulo"
-      "asideEnlaces";
-    height: 100%;
-    margin: 0 auto;
-    justify-content: space-between;
-  }
-  .aside-titulo {
-    grid-area: asideTitulo;
-    display: grid;
-  }
-  .aside-enlaces {
-    grid-area: asideEnlaces;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    margin-left: 10px;
-  }
-  .img1{
-    height: auto;
-    width: 100%;   
-    margin:0 auto; 
-  }
-  .img2{    
-    height: auto;
-    width: 100%;   
-    margin:0 auto;
-  }
-
+  }   
   .fotos {
-    position: relative;
-    bottom: 120px;
-    grid-area: fotos;
-  }
-  .fotos-titulo {
-    justify-content: center;
-align-items:center;
-    font-size: 1.2em;
-  }
-  .fotos-div-fotos {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-  }
+   position:normal;
+   height:100%;
+  bottom:0;
+  }    
   .footer {
     grid-area: footer;
     display: grid;
-    grid-template-rows: 50px 50px;
     grid-template-columns: 100%;
     grid-template-areas: "redes" "derechos";
-    justify-content: center;
-  }
-}
-@media screen and (max-width: 700px) {
-  #container {
-    grid-template-columns: 100%;
-    grid-template-rows: 180px 120px 200px 1fr 90vh 140px;
-    grid-template-areas:
-      "header"
-      "aside"
-      "caja"
-      " main "
-      "fotos "
-      "footer";
-  }
-  .blanco{
-    font-size: 0.9em;
-  }
-  .main{
-    width:90%;
-  }
-  .img2 {
-    
-    height: 35vh;   
-  }
-  .aside-enlaces {
-    margin:0;
-  }
-
-}
-@media screen and (max-width: 700px) {
-  #container {
-   
-    grid-template-rows: 180px 120px 200px 1fr 65vh 140px;
-  }
-  .img2{
-    height:25vh;
-  }
+    margin:0 auto;
+  }   
 }

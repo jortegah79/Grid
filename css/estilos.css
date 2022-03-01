@@ -113,7 +113,7 @@ body {
   display: grid;
   grid-area: caja;
   position: relative;
-  bottom: 70%;
+  bottom: 50%;
   grid-template-areas:
     "pos1"
     "pos2"
